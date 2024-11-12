@@ -329,4 +329,10 @@ contract DelegationManager is IDelegationManager, Ownable2Step, Pausable, EIP712
     function getDelegationHash(Delegation calldata _input) public pure returns (bytes32) {
         return EncoderLib._getDelegationHash(_input);
     }
+
+    function isModuleType(uint256 moduleTypeId) external pure returns (bool) {
+        if (moduleTypeId == 2) return true;
+    }
+
+    function onInstall(bytes calldata) external { }
 }
